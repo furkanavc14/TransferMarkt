@@ -1,0 +1,837 @@
+<!DOCTYPE html> <!-- HTML5 doctype bildirimi: Tarayıcıya HTML5 standardı kullanılacağını belirtir -->
+<html lang="tr"> <!-- Sayfa dili Türkçe olarak ayarlandı -->
+<head> <!-- Sayfa başı başlangıcı: Meta, başlık ve stil dosyaları burada tanımlanır -->
+    <meta charset="UTF-8"> <!-- Karakter kodlaması: Türkçe karakterler için UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Mobil uyumlu görünüm ayarı -->
+    <title>Galatasaray - Kulüp profili | Transfermarkt</title> <!-- Sayfa başlığı -->
+    <link rel="stylesheet" href="./src/styles.css"> <!-- Harici stil dosyası -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome ikonları -->
+</head>
+<style> /* Dahili CSS başlangıcı: Sayfa içi stiller burada tanımlanır */
+    /* Reset ve genel stiller */ /* Tüm elementler için sıfırlama ve temel ayarlar */
+* {
+    margin: 0; /* Varsayılan dış boşlukları sıfırlar */
+    padding: 0; /* Varsayılan iç boşlukları sıfırlar */
+    box-sizing: border-box; /* Kutu modeli ayarı */
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* Yazı tipi ailesi */
+    background-color: #f8f8f8; /* Sayfa arka plan rengi */
+    color: #333; /* Ana yazı rengi */
+    line-height: 1.5; /* Satır yüksekliği */
+}
+
+.container {
+    max-width: 1260px; /* Konteyner maksimum genişliği */
+    margin: 0 auto; /* Ortalar */
+    padding: 0 10px; /* Yandan boşluk bırakır */
+}
+
+a {
+    text-decoration: none; /* Link altı çizgisini kaldırır */
+    color: inherit; /* Link rengi miras alınır */
+}
+
+ul {
+    list-style: none; /* Madde işaretlerini kaldırır */
+}
+
+img {
+    max-width: 100%; /* Görsellerin taşmasını engeller */
+    height: auto; /* Oranlı yükseklik */
+}
+
+button {
+    cursor: pointer; /* İmleç el şeklinde olur */
+    border: none; /* Kenarlık yok */
+}
+
+/* Header */
+.header {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Hafif gölge */
+    background-color: #fff; /* Beyaz arka plan */
+}
+
+.top-header {
+    padding: 12px 0; /* Dikey boşluk */
+    border-bottom: 1px solid #e5e5e5; /* Alt çizgi */
+}
+
+.top-header .container {
+    display: flex; /* Yatay hizalama */
+    align-items: center; /* Dikey ortalama */
+    justify-content: space-between; /* Uzaklaştırır */
+}
+
+.logo-container {
+    display: flex; /* Yatay hizalama */
+    align-items: center; /* Dikey ortalama */
+}
+
+.logo img {
+    height: 40px; /* Logo yüksekliği */
+}
+
+.live {
+    display: inline-block; /* Satır içi blok */
+    background-color: #d20515; /* Kırmızı arka plan */
+    color: white; /* Beyaz yazı */
+    font-size: 12px; /* Yazı boyutu */
+    font-weight: bold; /* Kalın yazı */
+    padding: 3px 8px; /* İç boşluk */
+    border-radius: 3px; /* Köşe yuvarlatma */
+    margin-left: 10px; /* Sol boşluk */
+}
+
+.search-container {
+    display: flex; /* Yatay hizalama */
+    flex: 1; /* Genişliği doldurur */
+    max-width: 400px; /* Maksimum genişlik */
+    margin: 0 20px; /* Yandan boşluk */
+}
+
+.search-input {
+    flex: 1; /* Genişliği doldurur */
+    padding: 10px 15px; /* İç boşluk */
+    border: 1px solid #e5e5e5; /* Kenarlık */
+    border-right: none; /* Sağ kenarlık yok */
+    border-radius: 4px 0 0 4px; /* Sol köşeler yuvarlatılmış */
+    outline: none; /* Odak çizgisi yok */
+}
+
+.search-button {
+    background-color: #fff; /* Beyaz arka plan */
+    border: 1px solid #e5e5e5; /* Kenarlık */
+    border-left: none; /* Sol kenarlık yok */
+    border-radius: 0 4px 4px 0; /* Sağ köşeler yuvarlatılmış */
+    padding: 0 15px; /* Yatay iç boşluk */
+    color: #999; /* Yazı rengi */
+}
+
+.user-actions {
+    display: flex; /* Yatay hizalama */
+    align-items: center; /* Dikey ortalama */
+    gap: 15px; /* Elemanlar arası boşluk */
+}
+
+.user-actions a {
+    color: #666; /* Yazı rengi */
+    font-size: 18px; /* Yazı boyutu */
+}
+
+.login-button {
+    background-color: #3498db; /* Mavi arka plan */
+    color: white !important; /* Beyaz yazı */
+    padding: 8px 16px; /* İç boşluk */
+    border-radius: 4px; /* Köşe yuvarlatma */
+    font-size: 14px !important; /* Yazı boyutu */
+    font-weight: bold; /* Kalın yazı */
+}
+
+/* Main Navigation */
+.main-nav {
+    background-color: #051c2c; /* Koyu mavi arka plan */
+    color: white; /* Menü yazı rengi */
+}
+
+.nav-links {
+    display: flex; /* Yatay hizalama */
+    align-items: center; /* Dikey ortalama */
+}
+
+.nav-links li {
+    position: relative; /* Konumlandırma */
+}
+
+.nav-links li a {
+    display: block; /* Blok eleman */
+    padding: 15px; /* İç boşluk */
+    font-size: 14px; /* Yazı boyutu */
+    font-weight: bold; /* Kalın yazı */
+    transition: background-color 0.2s; /* Arka plan geçişi */
+}
+
+.nav-links li a:hover {
+    background-color: #0a2e4a; /* Üzerine gelince arka plan */
+}
+
+.menu-toggle {
+    margin-left: auto; /* Sola yaslar */
+}
+
+/* Main Content */
+.main {
+    padding: 20px 0; /* Dikey boşluk */
+}
+
+/* Club Header */
+.club-header {
+    background-color: #fff; /* Beyaz arka plan */
+    padding: 15px; /* İç boşluk */
+    margin-bottom: 20px; /* Alt boşluk */
+    border-radius: 4px; /* Köşe yuvarlatma */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Hafif gölge */
+}
+
+.club-name {
+    color: #051c2c; /* Başlık rengi */
+    font-size: 36px; /* Başlık boyutu */
+    margin-bottom: 15px; /* Alt boşluk */
+    font-weight: bold; /* Kalın başlık */
+}
+
+.club-info {
+    display: flex; /* Yatay hizalama */
+    align-items: flex-start; /* Üstten hizalama */
+    flex-wrap: wrap; /* Taşanları alt satıra geçirir */
+}
+
+.club-logo {
+    width: 140px; /* Logo kutusu genişliği */
+    height: 140px; /* Logo kutusu yüksekliği */
+    margin-right: 30px; /* Sağ boşluk */
+}
+
+.club-logo img {
+    width: 100%; /* Görsel tam kutuyu kaplar */
+    height: 100%; /* Görsel tam kutuyu kaplar */
+    object-fit: contain; /* Görseli kırpmadan sığdırır */
+}
+
+.club-trophies {
+    display: flex; /* Yatay hizalama */
+    gap: 15px; /* Elemanlar arası boşluk */
+    margin-top: 20px; /* Üst boşluk */
+    margin-bottom: 20px; /* Alt boşluk */
+}
+
+.trophy {
+    position: relative; /* Konumlandırma */
+}
+
+.trophy img {
+    width: 60px; /* Kupa görseli genişliği */
+    height: 60px; /* Kupa görseli yüksekliği */
+    object-fit: contain; /* Görseli kırpmadan sığdırır */
+}
+
+.trophy-count {
+    position: absolute; /* Mutlak konum */
+    top: -5px; /* Üste hizalı */
+    right: -5px; /* Sağa hizalı */
+    background-color: #051c2c; /* Koyu mavi arka plan */
+    color: white; /* Beyaz yazı */
+    border-radius: 50%; /* Yuvarlak şekil */
+    width: 24px; /* Genişlik */
+    height: 24px; /* Yükseklik */
+    display: flex; /* Yatay hizalama */
+    align-items: center; /* Dikey ortalama */
+    justify-content: center; /* Ortala */
+    font-size: 12px; /* Yazı boyutu */
+    font-weight: bold; /* Kalın yazı */
+}
+
+.club-details, .club-stadium {
+    margin-top: 20px; /* Üst boşluk */
+    padding-left: 20px; /* Soldan boşluk */
+}
+
+.detail-row {
+    margin-bottom: 10px; /* Alt boşluk */
+}
+
+.detail-label {
+    color: #777; /* Açık gri yazı */
+    margin-right: 5px; /* Sağ boşluk */
+}
+
+.detail-value {
+    font-weight: bold; /* Kalın yazı */
+}
+
+.detail-percentage {
+    font-size: 13px; /* Yazı boyutu */
+    color: #777; /* Yazı rengi */
+    margin-left: 5px; /* Sol boşluk */
+}
+
+.stadium-link {
+    color: #3498db; /* Mavi link rengi */
+    font-weight: bold; /* Kalın yazı */
+}
+
+.stadium-capacity {
+    font-size: 13px; /* Yazı boyutu */
+    color: #777; /* Yazı rengi */
+    margin-left: 5px; /* Sol boşluk */
+}
+
+.negative {
+    color: #d20515; /* Kırmızı yazı: Negatif değerler için */
+}
+
+/* Sidebar and Main Content Layout */
+.sidebar-main-content {
+    display: flex; /* Yatay hizalama */
+    gap: 20px; /* Ana içerik ve yan menü arası boşluk */
+}
+
+.content-main {
+    flex: 1; /* Ana içerik alanı genişliği */
+}
+
+.sidebar {
+    width: 300px; /* Yan menü genişliği */
+}
+
+/* Club Value */
+.club-value {
+    background-color: #3498db; /* Mavi arka plan */
+    color: white; /* Beyaz yazı */
+    padding: 20px; /* İç boşluk */
+    border-radius: 4px; /* Köşe yuvarlatma */
+    text-align: center; /* Ortala */
+    margin-bottom: 20px; /* Alt boşluk */
+}
+
+.value-amount {
+    font-size: 36px; /* Değer rakamı boyutu */
+    font-weight: bold; /* Kalın yazı */
+    line-height: 1; /* Satır yüksekliği */
+}
+
+.value-currency {
+    font-size: 20px; /* Para birimi boyutu */
+}
+
+.value-description {
+    font-size: 14px; /* Açıklama yazı boyutu */
+    margin-top: 5px; /* Üst boşluk */
+}
+
+/* Banner */
+.banner {
+    margin-bottom: 20px; /* Alt boşluk */
+}
+
+.banner img {
+    width: 100%; /* Görsel tam genişlik */
+    border-radius: 4px; /* Köşe yuvarlatma */
+}
+
+/* Submenu */
+.submenu {
+    background-color: #051c2c; /* Koyu mavi arka plan */
+    border-radius: 4px; /* Köşe yuvarlatma */
+    margin-bottom: 20px; /* Alt boşluk */
+}
+
+.submenu-links {
+    display: flex; /* Yatay hizalama */
+    flex-wrap: wrap; /* Taşanları alt satıra geçirir */
+    align-items: center; /* Dikey ortalama */
+}
+
+.submenu-links li {
+    position: relative; /* Konumlandırma */
+}
+
+.submenu-links li a {
+    display: block; /* Blok eleman */
+    padding: 15px; /* İç boşluk */
+    color: white; /* Yazı rengi */
+    font-size: 13px; /* Yazı boyutu */
+    font-weight: bold; /* Kalın yazı */
+}
+
+.submenu-links li.active {
+    background-color: #0a2e4a; /* Aktif menü arka planı */
+}
+
+.submenu-links li.settings {
+    margin-left: auto; /* Sola yaslar */
+}
+
+/* Squad Section */
+.squad-section {
+    background-color: white; /* Beyaz arka plan */
+    border-radius: 4px; /* Köşe yuvarlatma */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Hafif gölge */
+}
+
+.squad-header {
+    background-color: #051c2c; /* Koyu mavi arka plan */
+    color: white; /* Beyaz yazı */
+    padding: 15px; /* İç boşluk */
+    border-radius: 4px 4px 0 0; /* Üst köşeler yuvarlatılmış */
+}
+
+.squad-header h2 {
+    font-size: 14px; /* Başlık boyutu */
+    font-weight: bold; /* Kalın başlık */
+}
+
+.squad-filter {
+    display: flex; /* Yatay hizalama */
+    justify-content: space-between; /* Uzaklaştırır */
+    align-items: center; /* Dikey ortalama */
+    padding: 15px; /* İç boşluk */
+    border-bottom: 1px solid #e5e5e5; /* Alt çizgi */
+}
+
+.season-filter {
+    display: flex; /* Yatay hizalama */
+    align-items: center; /* Dikey ortalama */
+    gap: 10px; /* Elemanlar arası boşluk */
+}
+
+.dropdown {
+    position: relative; /* Konumlandırma */
+}
+
+.dropdown-button {
+    background-color: white; /* Beyaz arka plan */
+    border: 1px solid #e5e5e5; /* Kenarlık */
+    border-radius: 4px; /* Köşe yuvarlatma */
+    padding: 8px 12px; /* İç boşluk */
+    font-size: 14px; /* Yazı boyutu */
+    display: flex; /* Yatay hizalama */
+    align-items: center; /* Dikey ortalama */
+    gap: 10px; /* Elemanlar arası boşluk */
+}
+
+.view-button {
+    background-color: #3498db; /* Mavi arka plan */
+    color: white; /* Beyaz yazı */
+    padding: 8px 15px; /* İç boşluk */
+    border-radius: 4px; /* Köşe yuvarlatma */
+    font-weight: bold; /* Kalın yazı */
+}
+
+.view-options {
+    display: flex; /* Yatay hizalama */
+    border: 1px solid #e5e5e5; /* Kenarlık */
+    border-radius: 4px; /* Köşe yuvarlatma */
+    overflow: hidden; /* Taşanları gizle */
+}
+
+.option {
+    padding: 8px 15px; /* İç boşluk */
+    font-size: 14px; /* Yazı boyutu */
+    background-color: white; /* Beyaz arka plan */
+    border-right: 1px solid #e5e5e5; /* Sağ kenarlık */
+}
+
+.option:last-child {
+    border-right: none; /* Son elemanda sağ kenarlık yok */
+}
+
+.option.active {
+    background-color: #f0f0f0; /* Aktif görünüm */
+    font-weight: bold; /* Kalın yazı */
+}
+
+/* Player Table */
+.player-table {
+    padding: 15px; /* İç boşluk */
+}
+
+table {
+    width: 100%; /* Tablo tam genişlik */
+    border-collapse: collapse; /* Kenarlıklar birleşik */
+}
+
+thead {
+    background-color: #f8f8f8; /* Başlık satırı arka planı */
+}
+
+th, td {
+    padding: 10px; /* İç boşluk */
+    text-align: left; /* Sola hizalı */
+    border-bottom: 1px solid #e5e5e5; /* Alt çizgi */
+}
+
+th {
+    font-size: 14px; /* Başlık yazı boyutu */
+    font-weight: bold; /* Kalın başlık */
+    color: #555; /* Başlık rengi */
+}
+
+.player-number {
+    font-weight: bold; /* Kalın yazı */
+    width: 40px; /* Sütun genişliği */
+    text-align: center; /* Ortala */
+    background-color: #051c2c; /* Koyu mavi arka plan */
+    color: white; /* Beyaz yazı */
+    border-radius: 4px; /* Köşe yuvarlatma */
+}
+
+.player-info {
+    display: flex; /* Yatay hizalama */
+    align-items: center; /* Dikey ortalama */
+}
+
+.player-img {
+    width: 40px; /* Görsel genişliği */
+    height: 40px; /* Görsel yüksekliği */
+    border-radius: 50%; /* Yuvarlak */
+    object-fit: cover; /* Görseli kırpmadan sığdırır */
+    margin-right: 10px; /* Sağ boşluk */
+}
+
+.player-name {
+    display: block; /* Blok eleman */
+    color: #3498db; /* Mavi yazı */
+    font-weight: bold; /* Kalın yazı */
+}
+
+.player-position {
+    display: block; /* Blok eleman */
+    font-size: 13px; /* Yazı boyutu */
+    color: #777; /* Yazı rengi */
+}
+
+.player-nationality {
+    display: flex; /* Yatay hizalama */
+    gap: 5px; /* Elemanlar arası boşluk */
+}
+
+.flag {
+    width: 24px; /* Bayrak genişliği */
+    height: 16px; /* Bayrak yüksekliği */
+    object-fit: cover; /* Görseli kırpmadan sığdırır */
+}
+
+.player-value {
+    font-weight: bold; /* Kalın yazı */
+}
+
+/* League Info */
+.league-info {
+    background-color: white; /* Beyaz arka plan */
+    border-radius: 4px; /* Köşe yuvarlatma */
+    padding: 15px; /* İç boşluk */
+    margin-bottom: 20px; /* Alt boşluk */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Hafif gölge */
+}
+
+.league-logo {
+    display: block; /* Blok eleman */
+    margin: 0 auto 15px; /* Ortala ve alt boşluk */
+    height: 80px; /* Logo yüksekliği */
+}
+
+.league-name {
+    text-align: center; /* Ortala */
+    margin-bottom: 15px; /* Alt boşluk */
+    font-weight: bold; /* Kalın başlık */
+    color: #051c2c; /* Başlık rengi */
+}
+
+.league-detail {
+    display: flex; /* Yatay hizalama */
+    align-items: center; /* Dikey ortalama */
+    margin-bottom: 10px; /* Alt boşluk */
+}
+
+/* Matches */
+.matches {
+    background-color: white; /* Beyaz arka plan */
+    border-radius: 4px; /* Köşe yuvarlatma */
+    padding: 15px; /* İç boşluk */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Hafif gölge */
+}
+
+.matches-header {
+    display: flex; /* Yatay hizalama */
+    justify-content: space-between; /* Uzaklaştırır */
+    align-items: center; /* Dikey ortalama */
+    margin-bottom: 15px; /* Alt boşluk */
+    padding-bottom: 10px; /* Alt iç boşluk */
+    border-bottom: 1px solid #e5e5e5; /* Alt çizgi */
+}
+
+.matches-header h3 {
+    font-size: 14px; /* Başlık boyutu */
+    font-weight: bold; /* Kalın başlık */
+    color: #051c2c; /* Başlık rengi */
+}
+
+.match-navigation {
+    display: flex; /* Yatay hizalama */
+    gap: 5px; /* Elemanlar arası boşluk */
+}
+
+.prev-match, .next-match {
+    background-color: #f0f0f0; /* Gri arka plan */
+    width: 30px; /* Buton genişliği */
+    height: 30px; /* Buton yüksekliği */
+    border-radius: 50%; /* Yuvarlak */
+    display: flex; /* Yatay hizalama */
+    align-items: center; /* Dikey ortalama */
+    justify-content: center; /* Ortala */
+}
+
+.match-info {
+    text-align: center; /* Ortala */
+}
+
+.match-league, .match-date {
+    font-size: 13px; /* Yazı boyutu */
+    margin-bottom: 10px; /* Alt boşluk */
+}
+
+.match-teams {
+    display: flex; /* Yatay hizalama */
+    align-items: center; /* Dikey ortalama */
+    justify-content: center; /* Ortala */
+    gap: 15px; /* Elemanlar arası boşluk */
+}
+
+.team {
+    display: flex; /* Dikey hizalama */
+    flex-direction: column; /* Dikey sıralama */
+    align-items: center; /* Ortala */
+    gap: 5px; /* Elemanlar arası boşluk */
+}
+
+.team-logo {
+    width: 50px; /* Takım logosu genişliği */
+    height: 50px; /* Takım logosu yüksekliği */
+    object-fit: contain; /* Görseli kırpmadan sığdırır */
+}
+
+.team-name {
+    font-size: 14px; /* Takım adı yazı boyutu */
+    font-weight: bold; /* Kalın yazı */
+}
+
+.match-score {
+    font-size: 20px; /* Skor yazı boyutu */
+    font-weight: bold; /* Kalın yazı */
+    display: flex; /* Yatay hizalama */
+    gap: 5px; /* Elemanlar arası boşluk */
+}
+</style> <!-- Dahili CSS sonu: Stil tanımlarının bittiği yer -->
+<body> <!-- Sayfa gövdesi başlangıcı: Sayfanın görünen ana içeriği burada başlar -->
+    <header class="header"> <!-- Header: Üst menü ve logo alanı -->
+        <div class="top-header"> <!-- Üst header: Logo, arama ve kullanıcı butonları -->
+            <div class="container"> <!-- Header içeriği konteyneri -->
+                <div class="logo-container"> <!-- Logo ve canlı etiketi -->
+                    <a href="#" class="logo"> <!-- Logo linki: Ana sayfaya döner -->
+                        <img src="tm.png" alt="Transfermarkt"> <!-- Site logosu -->
+                    </a>
+                    <span class="live">CANLI</span> <!-- Canlı yayın etiketi -->
+                </div>
+                <div class="search-container"> <!-- Arama kutusu -->
+                    <input type="text" placeholder="Arama" class="search-input"> <!-- Arama kutusu -->
+                    <button class="search-button">
+                        <i class="fas fa-search"></i> <!-- Arama ikonu -->
+                    </button>
+                </div>
+                <div class="user-actions"> <!-- Kullanıcı işlemleri butonları -->
+                    <a href="#" class="user-icon"><i class="fas fa-user"></i></a> <!-- Kullanıcı profili butonu -->
+                    <a href="#" class="bookmark-icon"><i class="fas fa-bookmark"></i></a> <!-- Favoriler butonu -->
+                    <a href="#" class="security-icon"><i class="fas fa-shield-alt"></i></a> <!-- Güvenlik/koruma butonu -->
+                    <a href="#" class="login-button">GİRİŞ YAP</a> <!-- Giriş yapma butonu -->
+                </div>
+            </div>
+        </div>
+        <nav class="main-nav"> <!-- Ana menü: Site ana navigasyon menüsü -->
+            <div class="container"> <!-- Menü konteyneri -->
+                <ul class="nav-links"> <!-- Menü seçenekleri listesi -->
+                    <li><a href="#">KEŞFET</a></li> <!-- Keşfet menüsü -->
+                    <li><a href="#">TRANSFERLER VE SÖYLENTİLER</a></li> <!-- Transferler menüsü -->
+                    <li><a href="#">PİYASA DEĞERLERİ</a></li> <!-- Piyasa değerleri menüsü -->
+                    <li><a href="#">MÜSABAKALAR</a></li> <!-- Müsabakalar menüsü -->
+                    <li><a href="#">İSTATİSTİKLER</a></li> <!-- İstatistikler menüsü -->
+                    <li><a href="#">TOPLULUK</a></li> <!-- Topluluk menüsü -->
+                    <li><a href="#">OYUNLAR</a></li> <!-- Oyunlar menüsü -->
+                    <li class="menu-toggle"><a href="#"><i class="fas fa-bars"></i></a></li> <!-- Menü açma/kapatma butonu -->
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main"> <!-- Ana içerik başlangıcı -->
+        <div class="container"> <!-- Ana içerik konteyneri -->
+            <div class="club-header"> <!-- Lig başlığı ve özet bilgiler -->
+                <h1 class="club-name">Süper Lig</h1> <!-- Lig adı başlığı -->
+                <div class="club-info"> <!-- Lig genel bilgileri -->
+                    <div class="club-logo"> <!-- Lig logosu kutusu -->
+                        <img src="süpr.png" alt="Süper Lig Logo"> <!-- Lig logosu -->
+                    </div>
+                    <div class="club-details"> <!-- Lig detayları -->
+                        <div class="detail-row">
+                            <span class="detail-label">Takım sayısı:</span> <!-- Takım sayısı etiketi -->
+                            <span class="detail-value">19 takım</span> <!-- Takım sayısı değeri -->
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">oyuncu:</span> <!-- Oyuncu etiketi -->
+                            <span class="detail-value">540</span> <!-- Oyuncu sayısı -->
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Yabancı oyuncular:</span> <!-- Yabancı oyuncu etiketi -->
+                            <span class="detail-value">248 Oyuncular</span> <!-- Yabancı oyuncu sayısı -->
+                            <span class="detail-percentage">45.9%</span> <!-- Yabancı oranı -->
+                        </div>
+                    </div>
+                    <div class="club-stadium"> <!-- Lig piyasa değeri ve yaş bilgisi -->
+                        <div class="detail-row">
+                            <span class="detail-label">Piyasa değeri:</span> <!-- Piyasa değeri etiketi -->
+                            <span class="detail-value">2.05 mil. €</span> <!-- Piyasa değeri -->
+                        </div>
+                         <div class="detail-row">
+                            <span class="detail-label">Yaş:</span> <!-- Ortalama yaş etiketi -->
+                            <span class="detail-value">26.7</span> <!-- Ortalama yaş -->
+                        </div>
+                         <div class="detail-row">
+                            <span class="detail-label">En değerli oyuncu:</span> <!-- En değerli oyuncu etiketi -->
+                            <span class="detail-value"> Victor Osimhen  70.00 mil. €</span> <!-- En değerli oyuncu ve değeri -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-main-content"> <!-- Ana içerik ve yan menü düzeni -->
+                <div class="content-main"> <!-- Ana içerik alanı -->
+                    <div class="club-value"> <!-- Lig toplam değeri kutusu -->
+                        <div class="value-amount">1.10</div> <!-- Değer rakamı -->
+                        <div class="value-currency">milyar €</div> <!-- Para birimi -->
+                        <div class="value-description">Toplam değer</div> <!-- Açıklama -->
+                    </div>
+
+                    <div class="banner"> <!-- Banner görseli -->
+                        <img src="takımlar.jpg" alt="Player of the Season"> <!-- Banner görseli -->
+                    </div>
+
+                    <div class="submenu"> <!-- Alt menü -->
+                        <ul class="submenu-links"> <!-- Alt menü seçenekleri -->
+                            <li><a href="#">GENEL BAKIŞ</a></li> <!-- Genel bakış sekmesi -->
+                            <li class="active"><a href="#">KADRO</a></li> <!-- Kadro sekmesi (aktif) -->
+                            <li><a href="#">FİKSTÜR</a></li> <!-- Fikstür sekmesi -->
+                            <li><a href="#">TRANSFERLER & SÖYLENTİLER</a></li> <!-- Transferler sekmesi -->
+                            <li><a href="#">GENEL BİLGİLER</a></li> <!-- Genel bilgiler sekmesi -->
+                            <li><a href="#">STADYUM</a></li> <!-- Stadyum sekmesi -->
+                            <li><a href="#">TARİHÇE</a></li> <!-- Tarihçe sekmesi -->
+                            <li><a href="#">HABERLER</a></li> <!-- Haberler sekmesi -->
+                            <li><a href="#">FORUM</a></li> <!-- Forum sekmesi -->
+                            <li class="settings"><a href="#"><i class="fas fa-cog"></i></a></li> <!-- Ayarlar sekmesi -->
+                        </ul>
+                    </div>
+
+                    <div class="squad-section"> <!-- Kadro tablosu bölümü -->
+                        <div class="squad-header"> <!-- Kadro başlığı -->
+                            <h2>Kulüpler - Süper Lig 24/25</h2> <!-- Kadro başlığı -->
+                        </div>
+                        <div class="squad-filter"> <!-- Kadro filtreleme alanı -->
+                            <div class="season-filter"> <!-- Sezon filtresi -->
+                                <span>Sezon</span> <!-- Sezon etiketi -->
+                                <div class="dropdown"> <!-- Sezon açılır menü -->
+                                    <button class="dropdown-button">24/25 <i class="fas fa-caret-down"></i></button> <!-- Sezon seçici buton -->
+                                </div>
+                                <button class="view-button">Göster</button> <!-- Filtreyi uygula butonu -->
+                            </div>
+                            <div class="view-options"> <!-- Görünüm seçenekleri -->
+                                <button class="option active">Kompakt</button> <!-- Kompakt görünüm -->
+                                <button class="option">Detaylı</button> <!-- Detaylı görünüm -->
+                                <button class="option">Galeri</button> <!-- Galeri görünüm -->
+                            </div>
+                        </div>
+                        <div class="club-table"> <!-- Kadro tablosu -->
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>#</th> <!-- Sıra numarası sütunu -->
+                                        <th>Kulüp</th> <!-- Kulüp adı sütunu -->
+                                        <th>Kadro</th> <!-- Kadro sayısı sütunu -->
+                                        <th>Yaş</th> <!-- Ortalama yaş sütunu -->
+                                        <th>Lejyonerler</th> <!-- Yabancı oyuncu sayısı sütunu -->
+                                        <th>Piyasa değeri</th> <!-- Piyasa değeri sütunu -->
+                                        <th>Toplam değer</th> <!-- Toplam değer sütunu -->
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="player-number">1</td> <!-- Sıra numarası -->
+                                        <td class="player-info"> <!-- Kulüp bilgisi -->
+                                            <img src="galatasaray.png" alt="Galatasaray" class="player-img"> <!-- Kulüp logosu -->
+                                            <div class="player-name-position"> <!-- Kulüp adı alanı -->
+                                                <a href="#" class="player-name">Galatasaray</a> <!-- Kulüp adı -->
+                                            </div>
+                                        </td>
+                                        <td class="club-dob">30</td> <!-- Kadro sayısı -->
+                                        <td class="club-dob">27.2</td> <!-- Ortalama yaş -->
+                                        <td class="club-dob">16</td> <!-- Lejyoner sayısı -->
+                                        <td class="club-dob">8.88 mil. €</td> <!-- Piyasa değeri -->
+                                        <td class="club-dob">266.25 mil. €</td> <!-- Toplam değer -->
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar"> <!-- Yan menü -->
+                    <div class="league-info"> <!-- Lig bilgileri kutusu -->
+                        <img src="türk.jpg" alt="Trendyol Süper Lig" class="league-logo"> <!-- Lig logosu -->
+                        <h3 class="league-name">Süper Lig</h3> <!-- Lig adı -->
+                        <div class="league-detail"> <!-- Lig seviyesi bilgisi -->
+                            <span class="detail-label">Lig seviyesi:</span> <!-- Lig seviyesi etiketi -->
+                            <img src="türkiye.png" alt="Türkiye" class="flag"> <!-- Ülke bayrağı -->
+                            <span class="detail-value">1.Lig</span> <!-- Lig seviyesi değeri -->
+                        </div>
+                        <div class="league-detail"> <!-- Son şampiyon bilgisi -->
+                            <span class="detail-label">Son şampiyon:</span> <!-- Son şampiyon etiketi -->
+                            <span class="detail-value">Galatasaray</span> <!-- Son şampiyon değeri -->
+                        </div>
+                        <div class="league-detail"> <!-- Rekor şampiyon bilgisi -->
+                            <span class="detail-label">Rekor şampiyon:</span> <!-- Rekor şampiyon etiketi -->
+                            <span class="detail-value">Galatasaray  25 kez</span> <!-- Rekor şampiyon değeri -->
+                        </div>
+                          <div class="league-detail"> <!-- UEFA ülke puanı bilgisi -->
+                            <span class="detail-label">UEFA Ülke Puanı Sıralaması:</span> <!-- UEFA etiketi -->
+                            <span class="detail-value">10. sıra  43.900 Puan</span> <!-- UEFA ülke puanı değeri -->
+                        </div>
+                    </div>
+
+                    <div class="matches"> <!-- Öne çıkan söylentiler kutusu -->
+                        <div class="matches-header"> <!-- Söylenti başlığı ve navigasyon -->
+                            <h3>Öne çıkan söylentiler</h3> <!-- Başlık -->
+                            <div class="match-navigation"> <!-- Navigasyon butonları -->
+                                <button class="prev-match"><i class="fas fa-chevron-left"></i></button> <!-- Önceki söylenti -->
+                                <button class="next-match"><i class="fas fa-chevron-right"></i></button> <!-- Sonraki söylenti -->
+                            </div>
+                        </div>
+                        <div class="match-info"> <!-- Söylenti içeriği -->
+                            <div class="team away"> <!-- Oyuncu görseli -->
+                                    <img src="darwin.webp" alt="Darwin Núñez" class="team-logo"> <!-- Oyuncu fotoğrafı -->
+                                </div>
+                            <div class="match-league">Darwin Núñez</div> <!-- Oyuncu adı -->
+                            <div class="match-date">Yaş: 25 yaşında </div> <!-- Oyuncu yaşı -->
+                            <div class="match-league">Mevki: Santrafor</div> <!-- Oyuncu mevki -->
+                            <div class="match-league">Piyasa değeri: 45.00 mil. €</div> <!-- Oyuncu piyasa değeri -->
+                            <div class="match-teams"> <!-- Takım transfer söylentisi -->
+                                <div class="team home"> <!-- Mevcut takım -->
+                                    <img src="liverpool.png" alt="liverpool" class="team-logo"> <!-- Mevcut takım logosu -->
+                                </div>
+                                <div class="match-score"> <!-- Transfer yönü -->
+                                    <span class="score"></span>
+                                    <span class="score"></span>
+                                    <span class="score">>>></span> <!-- Transfer oku -->
+                                </div>
+                                <div class="team away"> <!-- Hedef takım -->
+                                    <img src="yenifener.png" alt="Fenerbahçe" class="team-logo"> <!-- Hedef takım logosu -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="./src/main.ts"></script> <!-- Ana JavaScript dosyası -->
+</body> <!-- Sayfa gövdesi sonu: Sayfanın ana içeriği biter -->
+</html> <!-- HTML sonu: Dosya sonu -->

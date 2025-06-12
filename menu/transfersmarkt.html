@@ -1,0 +1,1133 @@
+<!DOCTYPE html> <!-- HTML5 doctype bildirimi: Tarayıcıya HTML5 standardı kullanılacağını belirtir -->
+<html lang="tr"> <!-- Sayfa dili Türkçe olarak ayarlandı -->
+<head> <!-- Sayfa başı başlangıcı: Meta, başlık ve stil dosyaları burada ta nımlanır -->
+    <meta charset="UTF-8"> <!-- Türkçe karakter desteği -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Mobil uyumlu görünüm -->
+    <title>Futbol üzerine her şey: Piyasa Değerleri, Söylentiler, Transferler, İstatistikler, Haberler ve Röportajlar | Transfermarkt</title> <!-- Sayfa başlığı -->
+    <link rel="stylesheet" href="style.css"> <!-- Harici stil dosyası -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome ikonları -->
+</head> <!-- Sayfa başı sonu -->
+<style> /* Dahili CSS başlangıcı: Sayfa içi stiller burada tanımlanır */
+    /* Global Styles */ /* Genel CSS ayarları: Tüm sayfa için geçerli temel ayarlar */
+* {
+    margin: 0; /* Varsayılan margin sıfırlama: Tüm elementlerin dış boşluğunu sıfırlar */
+    padding: 0; /* Varsayılan padding sıfırlama: Tüm elementlerin iç boşluğunu sıfırlar */
+    box-sizing: border-box; /* Kutu modeli ayarı: Padding ve border'ın genişlik ve yükseklik hesaplamalarına dahil edilmesini sağlar */
+    font-family: Arial, Helvetica, sans-serif; /* Yazı tipi: Sayfa genelinde kullanılacak yazı tipini ayarlar */
+}
+
+body {
+    background-color: #f4f4f4; /* Arka plan rengi: Sayfanın arka plan rengini ayarlar */
+    color: #333; /* Yazı rengi: Sayfa üzerindeki yazıların rengini ayarlar */
+    line-height: 1.6; /* Satır yüksekliği: Yazılar arasındaki dikey boşluğu ayarlar */
+}
+
+a {
+    text-decoration: none; /* Link altı çizgisini kaldırır: Linklerin altındaki çizgiyi kaldırır */
+    color: #0077c8; /* Link rengi: Linklerin rengini ayarlar */
+}
+
+a:hover {
+    text-decoration: underline; /* Üzerine gelince altı çizili: Linklerin üzerine gelindiğinde altının çizili olmasını sağlar */
+}
+
+img {
+    max-width: 100%; /* Görsellerin taşmasını engeller: Görsellerin konteynerlerinden taşmasını önler */
+}
+
+/* .container: Sayfanın ana içeriğini ortalar ve maksimum genişlik belirler */
+.container {
+    width: 100%; /* Konteyner genişliği tam sayfa: Konteynerin genişliğini tam sayfa yapar */
+    max-width: 1200px; /* Maksimum genişlik 1200px: Konteynerin maksimum genişliğini 1200px olarak ayarlar */
+    margin: 0 auto; /* Ortalar: Konteyneri yatayda ortalar */
+    padding: 0 15px; /* Yandan boşluk bırakır: Konteynerin sağ ve sol tarafına 15px boşluk ekler */
+}
+
+/* button: Tüm butonlar için temel ayarlar */
+button {
+    cursor: pointer; /* İmleç el şeklinde olur: Butonların üzerine gelindiğinde imleci el şeklinde gösterir */
+    border: none; /* Kenarlık yok: Butonların kenarlıklarını kaldırır */
+    outline: none; /* Tıklamada dış çizgi yok: Butonlara tıklandığında oluşan dış çizgiyi kaldırır */
+}
+
+/* ul: Liste işaretlerini kaldırır */
+ul {
+    list-style: none; /* Madde işaretlerini kaldırır: Listelerin başındaki madde işaretlerini kaldırır */
+}
+
+/* Dil Seçim Banner'ı */
+.language-banner {
+    background-color: #f8f8f8; /* Açık gri arka plan: Banner'ın arka plan rengini ayarlar */
+    padding: 8px 0; /* Dikey boşluk: Banner'ın üst ve alt tarafına 8px boşluk ekler */
+    border-bottom: 1px solid #ddd; /* Alt çizgi: Banner'ın altına ince bir çizgi ekler */
+}
+
+.banner-content {
+    display: flex; /* Yatay hizalama: Elemanları yatayda dizer */
+    align-items: center; /* Dikey ortalama: Elemanları dikeyde ortalar */
+    gap: 10px; /* Elemanlar arası boşluk: Elemanlar arasında 10px boşluk bırakır */
+    font-size: 13px; /* Yazı boyutu: Banner içindeki yazıların boyutunu ayarlar */
+    color: #666; /* Yazı rengi: Banner içindeki yazıların rengini ayarlar */
+}
+
+.flag-icon {
+    width: 16px; /* Bayrak genişliği: Banner'daki bayrak ikonunun genişliği */
+    height: 12px; /* Bayrak yüksekliği: Banner'daki bayrak ikonunun yüksekliği */
+}
+
+.stay-button {
+    background-color: #0077c8; /* Mavi arka plan: Banner'daki butonun arka plan rengi */
+    color: white; /* Beyaz yazı: Buton yazı rengi */
+    padding: 5px 10px; /* İç boşluk: Butonun iç kenar boşluğu */
+    border-radius: 3px; /* Köşe yuvarlatma: Butonun köşelerini yuvarlatır */
+    font-size: 13px; /* Yazı boyutu: Buton yazı boyutu */
+    margin-left: auto; /* Sola yaslar: Butonu sağa yaslar */
+}
+
+/* Header: Sayfanın üst kısmı */
+header {
+    background-color: white; /* Beyaz arka plan: Header'ın arka plan rengi */
+    border-bottom: 1px solid #ddd; /* Alt çizgi: Header'ın altına ince bir çizgi ekler */
+}
+
+.top-header {
+    display: flex; /* Yatay hizalama: Elemanları yatayda dizer */
+    justify-content: space-between; /* Uzaklaştırır: Elemanları iki uca yayar */
+    align-items: center; /* Dikey ortalama: Elemanları dikeyde ortalar */
+    padding: 15px 0; /* Dikey boşluk: Üst ve alt boşluk ekler */
+}
+
+.logo img {
+    height: 40px; /* Logo yüksekliği: Logonun yüksekliğini ayarlar */
+}
+
+.logo-container {
+    display: flex; /* Yatay hizalama: Logo ve domain butonunu yan yana dizer */
+    align-items: center; /* Dikey ortalama: Elemanları dikeyde ortalar */
+    gap: 10px; /* Elemanlar arası boşluk: Logo ve buton arasında boşluk bırakır */
+}
+
+.domain-dropdown {
+    background: none; /* Arka plan yok: Butonun arka planını kaldırır */
+    color: #666; /* Yazı rengi: Buton yazı rengi */
+    font-size: 14px; /* Yazı boyutu: Buton yazı boyutu */
+    font-weight: bold; /* Kalın yazı: Buton yazısını kalın yapar */
+    display: flex; /* Yatay hizalama: İçerikleri yatayda dizer */
+    align-items: center; /* Dikey ortalama: İçerikleri dikeyde ortalar */
+    gap: 5px; /* Elemanlar arası boşluk: Yazı ve ikon arasında boşluk bırakır */
+}
+
+.search-container {
+    display: flex; /* Dikey hizalama: Arama kutusu ve detaylı aramayı dikeyde dizer */
+    flex-direction: column; /* Dikey sıralama: Elemanları üst üste dizer */
+    align-items: center; /* Ortala: Elemanları ortalar */
+}
+
+.search-container form {
+    display: flex; /* Yatay hizalama: Arama kutusu ve butonu yan yana dizer */
+    width: 350px; /* Form genişliği: Arama formunun genişliğini ayarlar */
+}
+
+.search-input {
+    flex: 1; /* Genişliği doldurur: Arama kutusu kalan alanı kaplar */
+    padding: 10px; /* İç boşluk: Arama kutusunun iç kenar boşluğu */
+    border: 1px solid #ddd; /* Kenarlık: Kutunun kenar çizgisi */
+    border-right: none; /* Sağ kenarlık yok: Sağ kenar çizgisini kaldırır */
+    border-radius: 3px 0 0 3px; /* Sol köşeler yuvarlatılmış: Kutunun sol köşelerini yuvarlatır */
+    font-size: 14px; /* Yazı boyutu: Arama kutusu yazı boyutu */
+}
+
+.search-button {
+    padding: 0 15px; /* Yatay iç boşluk: Butonun sağ ve sol iç boşluğu */
+    background-color: #051c2c; /* Koyu mavi arka plan: Butonun arka plan rengi */
+    color: white; /* Beyaz yazı: Buton yazı rengi */
+    border-radius: 0 3px 3px 0; /* Sağ köşeler yuvarlatılmış: Butonun sağ köşelerini yuvarlatır */
+}
+
+.detailed-search {
+    font-size: 12px; /* Yazı boyutu: Detaylı arama linkinin yazı boyutu */
+    margin-top: 5px; /* Üst boşluk: Linkin üstünde boşluk bırakır */
+    color: #666; /* Yazı rengi: Linkin yazı rengi */
+}
+
+.user-buttons {
+    display: flex; /* Yatay hizalama: Kullanıcı butonlarını yan yana dizer */
+    gap: 10px; /* Elemanlar arası boşluk: Butonlar arasında boşluk bırakır */
+    align-items: center; /* Dikey ortalama: Butonları dikeyde ortalar */
+}
+
+.user-button {
+    background: none; /* Arka plan yok: Butonun arka planını kaldırır */
+    color: #666; /* Yazı rengi: Buton yazı rengi */
+    font-size: 16px; /* Yazı boyutu: Buton yazı boyutu */
+}
+
+.login-button {
+    background-color: #051c2c; /* Koyu mavi arka plan: Giriş butonunun arka plan rengi */
+    color: white; /* Beyaz yazı: Giriş butonu yazı rengi */
+    padding: 8px 15px; /* İç boşluk: Giriş butonunun iç kenar boşluğu */
+    border-radius: 3px; /* Köşe yuvarlatma: Giriş butonunun köşelerini yuvarlatır */
+    font-size: 14px; /* Yazı boyutu: Giriş butonu yazı boyutu */
+    display: flex; /* Yatay hizalama: Buton içeriğini yatayda dizer */
+    align-items: center; /* Dikey ortala: İçeriği dikeyde ortalar */
+    gap: 8px; /* Elemanlar arası boşluk: Yazı ve ikon arasında boşluk bırakır */
+}
+
+/* Ana Navigasyon Menüsü */
+.main-nav {
+    background-color: #051c2c; /* Koyu mavi arka plan */
+    
+}
+
+.main-nav ul {
+    display: flex; /* Yatay menü */
+    gap: 5px; /* Menü elemanları arası boşluk */
+}
+
+.main-nav a {
+    color: white; /* Menü yazı rengi */
+    padding: 12px 15px; /* İç boşluk */
+    display: block; /* Blok eleman */
+    font-size: 14px; /* Yazı boyutu */
+    font-weight: bold; /* Kalın yazı */
+}
+
+.main-nav a:hover {
+    background-color: #051c2c; /* Üzerine gelince arka plan */
+    text-decoration: none; /* Altı çizili olmasın */
+}
+
+.main-nav .active {
+    background-color: white; /* Aktif menü arka planı */
+    color: #051c2c; /* Aktif menü yazı rengi */
+}
+
+.badge {
+    background-color: #cc0000; /* Kırmızı arka plan */
+    color: white; /* Beyaz yazı */
+    border-radius: 50%; /* Yuvarlak şekil */
+    width: 18px; /* Genişlik */
+    height: 18px; /* Yükseklik */
+    display: inline-flex; /* Satır içi esnek kutu */
+    align-items: center; /* Dikey ortalama */
+    justify-content: center; /* Yatay ortalama */
+    font-size: 12px; /* Yazı boyutu */
+    margin-left: 5px; /* Sol boşluk */
+}
+
+.live-button {
+    margin-left: auto; /* Sola yaslar */
+}
+
+/* Alt Menü (Submenu) */
+.submenu-container {
+    background-color: #f4f4f4; /* Açık gri arka plan */
+    padding: 15px 0; /* Dikey boşluk */
+    border-bottom: 1px solid #ddd; /* Alt çizgi */
+}
+
+.section-label {
+    font-weight: bold; /* Kalın yazı */
+    color: #666; /* Yazı rengi */
+    font-size: 12px; /* Yazı boyutu */
+    display: block; /* Blok eleman */
+    margin-bottom: 10px; /* Alt boşluk */
+}
+
+.recommendation-items {
+    display: flex; /* Yatay hizalama */
+    flex-wrap: wrap; /* Taşanları alt satıra geçirir */
+    gap: 15px; /* Elemanlar arası boşluk */
+}
+
+.recommendation-item {
+    display: flex; /* Yatay hizalama */
+    align-items: center; /* Dikey ortalama */
+    gap: 5px; /* Elemanlar arası boşluk */
+    background-color: white; /* Beyaz arka plan */
+    padding: 5px 10px; /* İç boşluk */
+    border-radius: 3px; /* Köşe yuvarlatma */
+    font-size: 13px; /* Yazı boyutu */
+    color: #333; /* Yazı rengi */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1); /* Hafif gölge */
+}
+
+.recommendation-item img {
+    width: 18px; /* Görsel genişliği */
+    height: 18px; /* Görsel yüksekliği */
+}
+
+/* Breadcrumb (Yol Göstergesi) */
+.breadcrumb-container {
+    background-color: #e9e9e9; /* Açık gri arka plan */
+    padding: 10px 0; /* Dikey boşluk */
+    border-bottom: 1px solid #ddd; /* Alt çizgi */
+}
+
+.breadcrumb {
+    display: flex; /* Yatay hizalama */
+    align-items: center; /* Dikey ortalama */
+    gap: 15px; /* Elemanlar arası boşluk */
+}
+
+.home img {
+    width: 16px; /* Görsel genişliği */
+    height: 16px; /* Görsel yüksekliği */
+}
+
+.filter-buttons {
+    display: flex; /* Yatay hizalama */
+    gap: 10px; /* Elemanlar arası boşluk */
+}
+
+.filter-button {
+    background-color: white; /* Beyaz arka plan */
+    border: 1px solid #ddd; /* Kenarlık */
+    padding: 5px 10px; /* İç boşluk */
+    border-radius: 3px; /* Köşe yuvarlatma */
+    font-size: 13px; /* Yazı boyutu */
+    display: flex; /* Yatay hizalama */
+    align-items: center; /* Dikey ortalama */
+    gap: 5px; /* Elemanlar arası boşluk */
+    color: #333; /* Yazı rengi */
+}
+
+.filter-button img {
+    width: 16px; /* Görsel genişliği */
+    height: 16px; /* Görsel yüksekliği */
+}
+
+/* Ana İçerik Bölümleri */
+main {
+    padding: 20px 0; /* Dikey boşluk */
+}
+
+section {
+    margin-bottom: 30px; /* Alt boşluk */
+    background-color: white; /* Beyaz arka plan */
+    border-radius: 3px; /* Köşe yuvarlatma */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Hafif gölge */
+    padding: 15px; /* İç boşluk */
+}
+
+.section-header {
+    display: flex; /* Yatay hizalama */
+    justify-content: space-between; /* Uzaklaştırır */
+    align-items: center; /* Dikey ortalama */
+    margin-bottom: 15px; /* Alt boşluk */
+    border-bottom: 1px solid #ddd; /* Alt çizgi */
+    padding-bottom: 10px; /* Alt iç boşluk */
+}
+
+h2 {
+    font-size: 18px; /* Başlık boyutu */
+    color: #051c2c; /* Başlık rengi */
+    font-weight: bold; /* Kalın başlık */
+    text-transform: uppercase; /* Büyük harf */
+}
+
+.headline-filters {
+    font-size: 13px; /* Yazı boyutu */
+    color: #666; /* Yazı rengi */
+}
+
+.headline-filters a {
+    margin: 0 5px; /* Yatay boşluk */
+}
+
+/* Haber Grid'i */
+.news-grid {
+    display: grid; /* Izgara düzeni */
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Otomatik sütunlar */
+    gap: 20px; /* Kartlar arası boşluk */
+}
+
+.news-card {
+    border: 1px solid #ddd; /* Kenarlık */
+    border-radius: 3px; /* Köşe yuvarlatma */
+    overflow: hidden; /* Taşanları gizle */
+    position: relative; /* Konumlandırma */
+}
+
+.news-tag {
+    position: absolute; /* Mutlak konum */
+    top: 0; /* Üste hizalı */
+    left: 0; /* Sola hizalı */
+    background-color: #051c2c; /* Koyu mavi arka plan */
+    color: white; /* Beyaz yazı */
+    padding: 5px 10px; /* İç boşluk */
+    font-size: 12px; /* Yazı boyutu */
+    font-weight: bold; /* Kalın yazı */
+}
+
+.news-image {
+    width: 100%; /* Tam genişlik */
+    height: 150px; /* Sabit yükseklik */
+    object-fit: cover; /* Görseli kırpmadan sığdırır */
+}
+
+.news-title {
+    padding: 10px; /* İç boşluk */
+    font-size: 14px; /* Yazı boyutu */
+    line-height: 1.4; /* Satır yüksekliği */
+    color: #333; /* Yazı rengi */
+}
+
+/* En Popüler Profiller */
+.profiles-slider {
+    display: flex; /* Yatay hizalama */
+    align-items: center; /* Dikey ortalama */
+    gap: 15px; /* Elemanlar arası boşluk */
+}
+
+.slider-nav {
+    background-color: #f4f4f4; /* Açık gri arka plan */
+    border: 1px solid #ddd; /* Kenarlık */
+    width: 30px; /* Genişlik */
+    height: 30px; /* Yükseklik */
+    border-radius: 50%; /* Yuvarlak */
+    display: flex; /* Yatay hizalama */
+    align-items: center; /* Dikey ortalama */
+    justify-content: center; /* Ortala */
+}
+
+.slider-nav:disabled {
+    opacity: 0.5; /* Pasif görünüm */
+    cursor: not-allowed; /* Tıklanamaz */
+}
+
+.profiles-wrapper {
+    display: flex; /* Yatay hizalama */
+    gap: 20px; /* Kartlar arası boşluk */
+    overflow-x: auto; /* Yatay kaydırma */
+    scrollbar-width: none; /* Firefox için kaydırma çubuğu gizle */
+    -ms-overflow-style: none; /* IE ve Edge için */
+}
+
+.profiles-wrapper::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera için kaydırma çubuğu gizle */
+}
+
+.profile-card {
+    min-width: 200px; /* Minimum kart genişliği */
+    border: 1px solid #ddd; /* Kenarlık */
+    border-radius: 3px; /* Köşe yuvarlatma */
+    padding: 10px; /* İç boşluk */
+    position: relative; /* Konumlandırma */
+}
+
+.rank {
+    position: absolute; /* Mutlak konum */
+    top: 5px; /* Üste hizalı */
+    right: 5px; /* Sağa hizalı */
+    font-weight: bold; /* Kalın yazı */
+    color: #666; /* Yazı rengi */
+    font-size: 13px; /* Yazı boyutu */
+}
+
+.profile-img {
+    text-align: center; /* Ortala */
+    margin-bottom: 10px; /* Alt boşluk */
+}
+
+.profile-img img {
+    width: 100px; /* Görsel genişliği */
+    height: 100px; /* Görsel yüksekliği */
+    border-radius: 50%; /* Yuvarlak */
+    object-fit: cover; /* Görseli kırpmadan sığdırır */
+}
+
+.profile-info {
+    text-align: center; /* Ortala */
+}
+
+.player-name {
+    font-weight: bold; /* Kalın yazı */
+    color: #333; /* Yazı rengi */
+    font-size: 14px; /* Yazı boyutu */
+}
+
+.flag img {
+    width: 16px; /* Görsel genişliği */
+    height: 12px; /* Görsel yüksekliği */
+    margin-left: 5px; /* Sol boşluk */
+}
+
+.profile-value {
+    font-size: 12px; /* Yazı boyutu */
+    color: #666; /* Yazı rengi */
+    margin: 5px 0; /* Dikey boşluk */
+}
+
+.profile-value span {
+    font-weight: bold; /* Kalın yazı */
+    color: #0077c8; /* Mavi yazı */
+}
+
+.club {
+    display: flex; /* Yatay hizalama */
+    align-items: center; /* Dikey ortalama */
+    justify-content: center; /* Ortala */
+    gap: 5px; /* Elemanlar arası boşluk */
+    font-size: 12px; /* Yazı boyutu */
+}
+
+.club img {
+    width: 16px; /* Görsel genişliği */
+    height: 16px; /* Görsel yüksekliği */
+}
+
+.slider-dots {
+    display: flex; /* Yatay hizalama */
+    justify-content: center; /* Ortala */
+    gap: 5px; /* Noktalar arası boşluk */
+    margin-top: 15px; /* Üst boşluk */
+}
+
+.dot {
+    width: 10px; /* Nokta genişliği */
+    height: 10px; /* Nokta yüksekliği */
+    border-radius: 50%; /* Yuvarlak */
+    background-color: #ddd; /* Gri arka plan */
+}
+
+.dot.active {
+    background-color: #0077c8; /* Aktif nokta mavi */
+}
+
+/* Footer (Alt Bilgi) */
+footer {
+    background-color: #333; /* Koyu gri arka plan */
+    color: white; /* Beyaz yazı */
+    padding: 30px 0; /* Dikey boşluk */
+    margin-top: 40px; /* Üst boşluk */
+}
+
+.footer-top {
+    display: flex; /* Yatay hizalama */
+    justify-content: space-around; /* Uzaklaştırır */
+    flex-wrap: wrap; /* Taşanları alt satıra geçirir */
+    margin-bottom: 30px; /* Alt boşluk */
+}
+
+.footer-section h3 {
+    font-size: 14px; /* Başlık boyutu */
+    margin-bottom: 15px; /* Alt boşluk */
+    color: #ddd; /* Açık gri yazı */
+}
+
+.footer-section ul {
+    display: flex; /* Dikey hizalama */
+    flex-direction: column; /* Dikey sıralama */
+    gap: 8px; /* Elemanlar arası boşluk */
+}
+
+.footer-section a {
+    color: white; /* Beyaz yazı */
+    font-size: 13px; /* Yazı boyutu */
+}
+
+.footer-bottom {
+    display: flex; /* Yatay hizalama */
+    justify-content: space-between; /* Uzaklaştırır */
+    align-items: center; /* Dikey ortalama */
+    border-top: 1px solid #555; /* Üst çizgi */
+    padding-top: 20px; /* Üst iç boşluk */
+    font-size: 12px; /* Yazı boyutu */
+    color: #ddd; /* Açık gri yazı */
+}
+
+.footer-links {
+    display: flex; /* Yatay hizalama */
+    gap: 15px; /* Elemanlar arası boşluk */
+}
+
+.footer-links a {
+    color: #ddd; /* Açık gri yazı */
+    font-size: 12px; /* Yazı boyutu */
+}
+
+/* Maç Bölümü */
+.match-section {
+    padding: 15px; /* İç boşluk */
+}
+
+title-icon {
+    width: 20px; /* Görsel genişliği */
+    height: 20px; /* Görsel yüksekliği */
+    margin-right: 5px; /* Sağ boşluk */
+    vertical-align: middle; /* Dikey ortalama */
+}
+
+.section-subtitle {
+    font-size: 14px; /* Yazı boyutu */
+    color: #666; /* Yazı rengi */
+    margin: 15px 0; /* Dikey boşluk */
+    font-weight: bold; /* Kalın yazı */
+}
+
+.match-table {
+    width: 100%; /* Tablo tam genişlik */
+    border-collapse: collapse; /* Kenarlıklar birleşik */
+    margin-bottom: 15px; /* Alt boşluk */
+}
+
+.match-table th {
+    text-align: left; /* Sola hizalı */
+    padding: 8px; /* İç boşluk */
+    background-color: #f4f4f4; /* Açık gri arka plan */
+    border-bottom: 1px solid #ddd; /* Alt çizgi */
+    color: #666; /* Yazı rengi */
+    font-size: 12px; /* Yazı boyutu */
+    font-weight: normal; /* Normal yazı */
+}
+
+.match-table td {
+    padding: 8px; /* İç boşluk */
+    border-bottom: 1px solid #eee; /* Alt çizgi */
+    font-size: 13px; /* Yazı boyutu */
+    vertical-align: middle; /* Dikey ortalama */
+}
+
+.match-table img {
+    width: 20px; /* Görsel genişliği */
+    height: 20px; /* Görsel yüksekliği */
+}
+
+.match-table .score {
+    font-weight: bold; /* Kalın yazı */
+    text-align: center; /* Ortala */
+}
+
+action-link {
+    color: #666; /* Yazı rengi */
+}
+
+.view-all {
+    display: inline-block; /* Satır içi blok */
+    background-color: #f4f4f4; /* Açık gri arka plan */
+    padding: 5px 10px; /* İç boşluk */
+    border-radius: 3px; /* Köşe yuvarlatma */
+    font-size: 12px; /* Yazı boyutu */
+    color: #666; /* Yazı rengi */
+    margin-top: 10px; /* Üst boşluk */
+}
+
+/* Transfer Bölümü */
+.transfers-section {
+    padding: 15px; /* İç boşluk */
+}
+
+.transfer-table {
+    width: 100%; /* Tablo tam genişlik */
+    border-collapse: collapse; /* Kenarlıklar birleşik */
+    margin-bottom: 15px; /* Alt boşluk */
+}
+
+.transfer-table th {
+    text-align: left; /* Sola hizalı */
+    padding: 8px; /* İç boşluk */
+    background-color: #f4f4f4; /* Açık gri arka plan */
+    border-bottom: 1px solid #ddd; /* Alt çizgi */
+    color: #666; /* Yazı rengi */
+    font-size: 12px; /* Yazı boyutu */
+    font-weight: normal; /* Normal yazı */
+}
+
+.transfer-table td {
+    padding: 8px; /* İç boşluk */
+    border-bottom: 1px solid #eee; /* Alt çizgi */
+    font-size: 13px; /* Yazı boyutu */
+    vertical-align: middle; /* Dikey ortalama */
+}
+
+.player-col {
+    display: flex; /* Yatay hizalama */
+    align-items: center; /* Dikey ortalama */
+    gap: 10px; /* Elemanlar arası boşluk */
+    width: 50%; /* Sütun genişliği */
+}
+
+.player-img {
+    width: 40px; /* Görsel genişliği */
+    height: 40px; /* Görsel yüksekliği */
+    border-radius: 50%; /* Yuvarlak */
+    object-fit: cover; /* Görseli kırpmadan sığdırır */
+}
+
+.player-info {
+    display: flex; /* Dikey hizalama */
+    flex-direction: column; /* Dikey sıralama */
+}
+
+.player-name {
+    font-weight: bold; /* Kalın yazı */
+    font-size: 13px; /* Yazı boyutu */
+    color: #333; /* Yazı rengi */
+}
+
+.player-position {
+    font-size: 11px; /* Yazı boyutu */
+    color: #666; /* Yazı rengi */
+}
+
+.club-col {
+    width: 35%; /* Sütun genişliği */
+}
+
+.transfer-clubs {
+    display: flex; /* Yatay hizalama */
+    align-items: center; /* Dikey ortalama */
+    gap: 10px; /* Elemanlar arası boşluk */
+}
+
+.club-img {
+    width: 24px; /* Görsel genişliği */
+    height: 24px; /* Görsel yüksekliği */
+}
+
+.fee-col {
+    font-weight: bold; /* Kalın yazı */
+    text-align: right; /* Sağa hizalı */
+    width: 15%; /* Sütun genişliği */
+}
+@media (max-width: 768px) {
+  /* Ekran 768px'den küçükse mobil uyumlu düzenler */
+  body {
+    font-size: 16px; /* Mobilde yazı boyutu */
+    padding: 0; /* Varsayılan padding yok */
+    margin: 0; /* Varsayılan margin yok */
+  }
+
+  header {
+    text-align: center; /* Ortala */
+    padding: 1rem; /* Dikey boşluk */
+  }
+
+  nav {
+    display: flex; /* Dikey hizalama */
+    flex-direction: column; /* Dikey sıralama */
+    background-color: #444; /* Koyu gri arka plan */
+  }
+
+  nav a {
+    padding: 1rem; /* İç boşluk */
+    text-align: center; /* Ortala */
+    border-bottom: 1px solid #666; /* Alt çizgi */
+  }
+
+  .container {
+    flex-direction: column; /* Dikey sıralama */
+    padding: 1rem; /* İç boşluk */
+  }
+
+  .box {
+    margin-bottom: 1rem; /* Alt boşluk */
+  }
+
+  footer {
+    text-align: center; /* Ortala */
+    padding: 1rem; /* Dikey boşluk */
+    font-size: 14px; /* Yazı boyutu */
+  }
+}
+
+</style> <!-- Dahili CSS sonu: Stil tanımlarının bittiği yer -->
+<body> <!-- Sayfa gövdesi başlangıcı: Sayfanın görünen ana içeriği burada başlar -->
+    <!-- Header --> <!-- Üst menü başlangıcı: Sayfanın en üstündeki menü -->
+    <header> <!-- Header etiketi başlangıcı: Üst menü ve logo alanı -->
+        <div class="top-header container"> <!-- Üst header konteyneri: Logo, arama ve kullanıcı butonlarını içerir -->
+            <div class="logo-container"> <!-- Logo ve alan adı: Sol üstte site logosu ve domain seçici -->
+                <a href="#" class="logo"> <!-- Logo linki: Ana sayfaya döner -->
+                    <img src="tm.png" alt="Transfermarkt"> <!-- Site logosu: Transfermarkt logosu -->
+                </a>
+                <button class="domain-dropdown">.com.tr <i class="fas fa-chevron-down"></i></button> <!-- Alan adı seçici buton, farklı ülke domainleri için açılır menü -->
+            </div>
+            <div class="search-container"> <!-- Arama kutusu ve detaylı arama: Ortada arama kutusu ve detaylı arama linki -->
+                <form> <!-- Arama formu başlangıcı: Kullanıcıdan arama terimi alınır -->
+                    <input type="text" placeholder="Arama" class="search-input"> <!-- Kullanıcıdan arama terimi alınan kutu -->
+                    <button type="submit" class="search-button"><i class="fas fa-search"></i></button> <!-- Arama işlemini başlatan buton -->
+                </form>
+                <a href="#" class="detailed-search">Detaylı oyuncu arama</a> <!-- Detaylı arama sayfasına yönlendiren link -->
+            </div>
+            <div class="user-buttons"> <!-- Kullanıcı butonları grubu: Sağ üstte favoriler, topluluk ve giriş butonları -->
+                <button class="user-button"><i class="fas fa-bookmark"></i></button> <!-- Favoriler butonu, kullanıcıya ait favori içerikleri gösterir -->
+                <button class="user-button"><i class="fas fa-users"></i></button> <!-- Topluluk butonu, forum veya topluluk sayfasına yönlendirir -->
+                <button class="login-button">GİRİŞ YAP <i class="fas fa-user"></i></button> <!-- Giriş yapma işlemi için buton -->
+            </div>
+        </div>
+        <nav class="main-nav container"> <!-- Ana menü: Site ana navigasyon menüsü -->
+            <ul> <!-- Menü listesi: Navigasyon seçenekleri -->
+                <li><a href="#" class="active">KEŞFET</a></li> <!-- Keşfet menüsü: Ana sayfa veya keşfet bölümü -->
+                <li><a href="#">TRANSFERLER VE SÖYLENTİLER</a></li> <!-- Transferler menüsü: Transfer haberleri ve söylentiler -->
+                <li><a href="#">PİYASA DEĞERLERİ</a></li> <!-- Piyasa değerleri menüsü: Oyuncu ve takım piyasa değerleri -->
+                <li><a href="#">MÜSABAKALAR</a></li> <!-- Müsabakalar menüsü: Lig ve turnuva bilgileri -->
+                <li><a href="#">İSTATİSTİKLER</a></li> <!-- İstatistikler menüsü: Takım ve oyuncu istatistikleri -->
+                <li><a href="#">TOPLULUK</a></li> <!-- Topluluk menüsü: Forum ve topluluk bölümü -->
+                <li><a href="#">OYUNLAR</a></li> <!-- Oyunlar menüsü: Oyunlar ve eğlence bölümü -->
+                <li class="live-button"><a href="#">CANLI <span class="badge">2</span></a></li> <!-- Canlı maçlar: Şu anda oynanan maçlar -->
+            </ul>
+        </nav>
+    </header> <!-- Header etiketi sonu: Üst menü ve logo alanı biter -->
+
+    <!-- Submenu --> <!-- Alt menü: Hızlı erişim önerileri -->
+    <div class="submenu-container"> <!-- Alt menü konteyneri: Önerilen lig ve takımlar -->
+        <div class="submenu container"> <!-- Alt menü içeriği -->
+            <div class="recommendations"> <!-- Öneriler bölümü -->
+                <span class="section-label">ÖNERİLER</span> <!-- Öneriler başlığı -->
+                <div class="recommendation-items"> <!-- Öneri kartları grubu -->
+                    <a href="süperlig.html" class="recommendation-item"><img src="trandyolsüperr.png" alt="Süper Lig">Süper Lig</a> <!-- Süper Lig önerisi -->
+                    <a href="#" class="recommendation-item"><img src="tr1.lig.png" alt="1. Lig">1. Lig</a> <!-- 1. Lig önerisi -->
+                    <a href="fenerbahce.html" class="recommendation-item"><img src="yenifener.png" alt="Fenerbahçe">Fenerbahçe</a> <!-- Fenerbahçe önerisi -->
+                    <a href="galatasaray.html" class="recommendation-item"><img src="galatasaray.png" alt="Galatasaray">Galatasaray</a> <!-- Galatasaray önerisi -->
+                    <a href="beşiktaş.html" class="recommendation-item"><img src="beşiktaş.png" alt="Beşiktaş">Beşiktaş</a> <!-- Beşiktaş önerisi -->
+                    <a href="#" class="recommendation-item"><img src="trabzon.png" alt="Trabzonspor">Trabzonspor</a> <!-- Trabzonspor önerisi -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Breadcrumb --> <!-- Yol gösterici: Kullanıcının bulunduğu konumu gösterir -->
+    <div class="breadcrumb-container"> <!-- Breadcrumb konteyneri -->
+        <div class="breadcrumb container"> <!-- Breadcrumb içeriği -->
+            <a href="#" class="home"><img src="home.PNG" alt="Home"></a> <!-- Ana sayfa ikonu -->
+            <div class="filter-buttons"> <!-- Filtre butonları grubu -->
+                <button class="filter-button"><img src="bayrak.PNG" alt="Countries"> Türkiye <i class="fas fa-chevron-down"></i></button> <!-- Ülke filtresi -->
+                <button class="filter-button"><img src="müsahabaka.PNG" alt="Competitions"> Müsabaka <i class="fas fa-chevron-down"></i></button> <!-- Müsabaka filtresi -->
+                <button class="filter-button"><img src="kukup.PNG" alt="Teams"> Kulüp <i class="fas fa-chevron-down"></i></button> <!-- Kulüp filtresi -->
+                <button class="filter-button"><img src="oyuncu.PNG" alt="Players"> Oyuncu <i class="fas fa-chevron-down"></i></button> <!-- Oyuncu filtresi -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content --> <!-- Ana içerik: Sayfanın ana bölümleri -->
+    <main class="container"> <!-- Ana içerik konteyneri -->
+        <!-- Headline Section --> <!-- Gündem başlıkları bölümü -->
+        <section class="headline-section"> <!-- Gündem bölümü -->
+            <div class="section-header"> <!-- Gündem başlık ve filtreleri -->
+                <h2>GÜNDEM</h2> <!-- Gündem başlığı -->
+                <div class="headline-filters"> <!-- Gündem filtreleri -->
+                    <span>Öneriler:</span> <!-- Filtre başlığı -->
+                    <a href="#">Günün haberleri ·</a> <!-- Günün haberleri filtresi -->
+                    <a href="#">Günün karşılaşmaları ·</a> <!-- Günün karşılaşmaları filtresi -->
+                    <a href="#">Transfer rekorları</a> <!-- Transfer rekorları filtresi -->
+                </div>
+            </div>
+
+            <div class="news-grid"> <!-- Haber kartları ızgarası -->
+                <article class="news-card"> <!-- Bir haber kartı -->
+                    <div class="news-tag">TRANSFERE AÇIK KAPI</div> <!-- Haber etiketi -->
+                    <img src="cr7.jpg" alt="Ronaldo" class="news-image"> <!-- Haber görseli -->
+                    <h3 class="news-title">Ronaldo'dan veda sinyali: "Bu bölüm sona erdi" - Al-Nassr ile sözleşmesi bitiyor</h3> <!-- Haber başlığı -->
+                </article>
+
+                <article class="news-card"> <!-- Bir haber kartı -->
+                    <div class="news-tag">PİYASA DEĞERİ GÜNCELLEMESİ</div> <!-- Haber etiketi -->
+                    <img src="değerk.png" alt="Saudi Pro League" class="news-image"> <!-- Haber görseli -->
+                    <h3 class="news-title">Suudi Pro League'de Merih Demiral ve Jhon Durán değer kaybetti - Ronaldo sabit kaldı</h3> <!-- Haber başlığı -->
+                </article>
+
+                <article class="news-card"> <!-- Bir haber kartı -->
+                    <div class="news-tag">TM RÖPORTAJ</div> <!-- Haber etiketi -->
+                    <img src="tuta.jpg" alt="Tuta" class="news-image"> <!-- Haber görseli -->
+                    <h3 class="news-title">Tuta'dan Türkiye itirafı - Galatasaray ve Fenerbahçe'nin tekliflerini neden reddetti?</h3> <!-- Haber başlığı -->
+                </article>
+                
+                <article class="news-card"> <!-- Bir haber kartı -->
+                    <div class="news-tag">KALECİ ARAYIŞI</div> <!-- Haber etiketi -->
+                    <img src="kaleci.jpg" alt="kaleci" class="news-image"> <!-- Haber görseli -->
+                    <h3 class="news-title">Galatasaray'a Japon kaleci Zion Suzuki önerildi - Oyuncunun şartları araştırılıyor</h3> <!-- Haber başlığı -->
+                </article>
+                
+                <article class="news-card"> <!-- Bir haber kartı -->
+                    <div class="news-tag">RONALDO VE NEYMAR'I YAKALADI</div> <!-- Haber etiketi -->
+                     <img src="golrekoru.png" alt="golrekoru" class="news-image"> <!-- Haber görseli -->
+                    <h3 class="news-title">Üç farklı kulüpte 100 gol barajını geçen futbolcular - Lewandowski'den tarihi başarı</h3> <!-- Haber başlığı -->
+                </article>
+            </div>
+        </section>
+        
+        <!-- Match Section --> <!-- Maçlar bölümü -->
+        <section class="match-section"> <!-- Maçlar bölümü -->
+            <div class="section-header"> <!-- Maç başlık ve filtreleri -->
+                <h2>
+                    <img src="trandyolsüperr.png" alt="Süper Lig" class="title-icon"> <!-- Süper Lig logosu -->
+                    SÜPER LİG
+                </h2>
+                <div class="headline-filters"> <!-- Maç filtreleri -->
+                    <span>Öneriler:</span> <!-- Filtre başlığı -->
+                    <a href="#">Tüm şampiyonlar ·</a> <!-- Tüm şampiyonlar filtresi -->
+                    <a href="#">En golcüler ·</a> <!-- En golcüler filtresi -->
+                    <a href="#">En fazla forma giyenler ·</a> <!-- En fazla forma giyenler filtresi -->
+                    <a href="#">Şampiyon teknik direktörler</a> <!-- Şampiyon teknik direktörler filtresi -->
+                </div>
+            </div>
+            
+            <h3 class="section-subtitle">37. HAFTANIN MAÇLARI</h3> <!-- Hafta başlığı -->
+            <table class="match-table"> <!-- Maçlar tablosu -->
+                <thead>
+                    <tr>
+                        <th>Tarih</th> <!-- Maç tarihi sütunu -->
+                        <th>Ev sahibi takım</th> <!-- Ev sahibi takım sütunu -->
+                        <th></th> <!-- Ev sahibi takım logosu sütunu -->
+                        <th></th> <!-- Skor sütunu -->
+                        <th></th> <!-- Konuk takım logosu sütunu -->
+                        <th>Konuk takım</th> <!-- Konuk takım sütunu -->
+                        <th></th> <!-- İşlem sütunu -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Cmt 24 May 2025</td> <!-- Maç tarihi -->
+                        <td>Eyüpspor</td> <!-- Ev sahibi takım adı -->
+                        <td><img src="eyüp.png" alt="Eyüpspor"></td> <!-- Ev sahibi takım logosu -->
+                        <td class="score">2:1</td> <!-- Maç skoru -->
+                        <td><img src="antalya.png" alt="Antalyaspor"></td> <!-- Konuk takım logosu -->
+                        <td>Antalyaspor</td> <!-- Konuk takım adı -->
+                        <td><a href="#" class="action-link">···</a></td> <!-- İşlem butonu -->
+                    </tr>
+                    <tr>
+                        <td>Cmt 24 May 2025</td> <!-- Maç tarihi -->
+                        <td>Gaziantep FK</td> <!-- Ev sahibi takım adı -->
+                        <td><img src="ANTEP.png" alt="Gaziantep FK"></td> <!-- Ev sahibi takım logosu -->
+                        <td class="score">2:2</td> <!-- Maç skoru -->
+                        <td><img src="kasımpaşa.png" alt="Kasımpaşa"></td> <!-- Konuk takım logosu -->
+                        <td>Kasımpaşa</td> <!-- Konuk takım adı -->
+                        <td><a href="#" class="action-link">···</a></td> <!-- İşlem butonu -->
+                    </tr>
+                    <tr>
+                        <td>Cmt 24 May 2025</td> <!-- Maç tarihi -->
+                        <td>Göztepe</td> <!-- Ev sahibi takım adı -->
+                        <td><img src="göztepe.png" alt="Göztepe"></td> <!-- Ev sahibi takım logosu -->
+                        <td class="score">0:2</td> <!-- Maç skoru -->
+                        <td><img src="galatasaray.png" alt="Galatasaray"></td> <!-- Konuk takım logosu -->
+                        <td>Galatasaray</td> <!-- Konuk takım adı -->
+                        <td><a href="#" class="action-link">···</a></td> <!-- İşlem butonu -->
+                    </tr>
+                </tbody>
+            </table>
+            <a href="#" class="view-all">Tüm detaylar</a> <!-- Tüm maç detaylarını gösteren link -->
+        </section>
+        
+        <!-- Transfer Section --> <!-- Transferler bölümü -->
+        <section class="transfers-section"> <!-- Transferler bölümü -->
+            <div class="section-header"> <!-- Transfer başlığı -->
+                <h2>TRANSFERLER</h2> <!-- Transferler başlığı -->
+            </div>
+            
+            <h3 class="section-subtitle">SON TRANSFERLER</h3> <!-- Son transferler başlığı -->
+            <table class="transfer-table"> <!-- Transferler tablosu -->
+                <thead>
+                    <tr>
+                        <th>Oyuncu/Mevki</th> <!-- Oyuncu ve mevki sütunu -->
+                        <th>Kulüp</th> <!-- Kulüp sütunu -->
+                        <th>Bonservis</th> <!-- Bonservis sütunu -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="player-col"> <!-- Oyuncu bilgileri sütunu -->
+                            <img src="joaquin.webp" alt="Joaquín Torres" class="player-img"> <!-- Oyuncu fotoğrafı -->
+                            <div class="player-info"> <!-- Oyuncu adı ve mevki bilgisi -->
+                                <div class="player-name">Joaquín Torres</div> <!-- Oyuncu adı -->
+                                <div class="player-position">Sağ Kanat</div> <!-- Oyuncu mevki -->
+                            </div>
+                        </td>
+                        <td class="club-col"> <!-- Kulüp bilgileri sütunu -->
+                            <div class="transfer-clubs"> <!-- Transferdeki kulüpler -->
+                                <div class="club-from"> <!-- Eski kulüp -->
+                                    <img src="kulupsüz.png" alt="Kulüpsüz" class="club-img"> <!-- Eski kulüp logosu -->
+                                </div>
+                                <i class="fas fa-long-arrow-alt-right"></i> <!-- Transfer yönü oku -->
+                                <div class="club-to"> <!-- Yeni kulüp -->
+                                    <img src="takım.png" alt="Amazonas FC" class="club-img"> <!-- Yeni kulüp logosu -->
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fee-col">-</td> <!-- Bonservis bilgisi -->
+                    </tr>
+                    <tr>
+                        <td class="player-col"> <!-- Oyuncu bilgileri sütunu -->
+                            <img src="piatek.JPG" alt="Piatek" class="player-img"> <!-- Oyuncu fotoğrafı -->
+                            <div class="player-info"> <!-- Oyuncu adı ve mevki bilgisi -->
+                                <div class="player-name">Piatek</div> <!-- Oyuncu adı -->
+                                <div class="player-position">Santrafor</div> <!-- Oyuncu mevki -->
+                            </div>
+                        </td>
+                        <td class="club-col"> <!-- Kulüp bilgileri sütunu -->
+                            <div class="transfer-clubs"> <!-- Transferdeki kulüpler -->
+                                <div class="club-from"> <!-- Eski kulüp -->
+                                    <img src="başak.png" alt="Başakşehir" class="club-img"> <!-- Eski kulüp logosu -->
+                                </div>
+                                <i class="fas fa-long-arrow-alt-right"></i> <!-- Transfer yönü oku -->
+                                <div class="club-to"> <!-- Yeni kulüp -->
+                                    <img src="al.png" alt="AL DUHAIL SC" class="club-img"> <!-- Yeni kulüp logosu -->
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fee-col">-</td> <!-- Bonservis bilgisi -->
+                    </tr>
+                </tbody>
+            </table>
+            <a href="#" class="view-all">Tüm transferler</a> <!-- Tüm transferleri gösteren link -->
+        </section>
+
+        <!-- Popular Profiles Section --> <!-- En çok tıklanan profiller bölümü -->
+        <section class="popular-profiles"> <!-- Popüler profiller bölümü -->
+            <h2>EN ÇOK TIKLANAN PROFİLLER</h2> <!-- Bölüm başlığı -->
+            <div class="profiles-slider"> <!-- Profil kaydırıcı alanı -->
+                <button class="slider-nav prev" disabled><i class="fas fa-chevron-left"></i></button> <!-- Önceki profil butonu -->
+                
+                <div class="profiles-wrapper"> <!-- Profilleri yatay kaydıran alan -->
+                    <div class="profile-card">  <!-- Bir profil kartı -->
+                        <span class="rank">#1</span> <!-- Sıra numarası -->
+                        <div class="profile-img"> <!-- Profil fotoğrafı alanı -->
+                            <img src="muslera.webp" alt="F. Muslera"> <!-- Profil fotoğrafı -->
+                        </div>
+                        <div class="profile-info"> <!-- Profil bilgileri -->
+                            <a href="#" class="player-name">F. Muslera</a> <!-- Oyuncu adı -->
+                            <span class="flag"><img src="uruguay.png" alt="Uruguay"></span> <!-- Ülke bayrağı -->
+                            <div class="profile-value">Piyasa değeri: <span>1.00 mil. €</span></div> <!-- Piyasa değeri -->
+                            <div class="club"> <!-- Takım bilgisi -->
+                                <a href="#"><img src="galatasaray.png" alt="Galatasaray"></a> <!-- Takım logosu -->
+                                <a href="#">Galatasaray</a> <!-- Takım adı -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-card"> <!-- Bir profil kartı -->
+                        <span class="rank">#2</span> <!-- Sıra numarası -->
+                        <div class="profile-img"> <!-- Profil fotoğrafı alanı -->
+                            <img src="osimhen.webp" alt="V. Osimhen"> <!-- Profil fotoğrafı -->
+                        </div>
+                        <div class="profile-info"> <!-- Profil bilgileri -->
+                            <a href="#" class="player-name">V. Osimhen</a> <!-- Oyuncu adı -->
+                            <span class="flag"><img src="nijerya.png" alt="Nijerya"></span> <!-- Ülke bayrağı -->
+                            <div class="profile-value">Piyasa değeri: <span>70.00 mil. €</span></div> <!-- Piyasa değeri -->
+                            <div class="club"> <!-- Takım bilgisi -->
+                                <a href="#"><img src="galatasaray.png" alt="Galatasaray"></a> <!-- Takım logosu -->
+                                <a href="#">Galatasaray</a> <!-- Takım adı -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="slider-nav next"><i class="fas fa-chevron-right"></i></button> <!-- Sonraki profil butonu -->
+            </div>
+            <div class="slider-dots"> <!-- Slider noktaları: Profil kaydırıcı için sayfa noktaları -->
+                <button class="dot active"></button> <!-- Aktif nokta -->
+                <button class="dot"></button> <!-- Diğer noktalar -->
+                <button class="dot"></button>
+                <button class="dot"></button>
+                <button class="dot"></button>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer> <!-- Footer etiketi başlangıcı -->
+            <div class="footer-top"> <!-- Footer üst kısmı: Hızlı bağlantılar ve katılım -->
+                <div class="footer-section"> <!-- Hızlı bağlantılar bölümü -->
+                    <h3>HIZLI BAĞLANTILAR</h3> <!-- Bölüm başlığı -->
+                    <ul>
+                        <li><a href="#">Dünya genelinde en değerli oyuncular</a></li> <!-- Hızlı bağlantı -->
+                        <li><a href="#">Son transferler</a></li> <!-- Hızlı bağlantı -->
+                        <li><a href="#">Son söylentiler</a></li> <!-- Hızlı bağlantı -->
+                        <li><a href="#">Son piyasa değeri güncellemesi</a></li> <!-- Hızlı bağlantı -->
+                    </ul>
+                </div>
+                <div class="footer-section"> <!-- Katılım bölümü -->
+                    <h3>SEN DE DAHİL OL</h3> <!-- Bölüm başlığı -->
+                    <ul>
+                        <li><a href="#">Moderatörler ve Veri Gözlemcisi</a></li> <!-- Katılım bağlantısı -->
+                        <li><a href="#">Moderatör veya Veri Gözlemcisi olarak başvur</a></li> <!-- Katılım bağlantısı -->
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom"> <!-- Footer alt kısmı: Telif ve yasal bağlantılar -->
+                <p>© TRANSFERMARKT 2025</p> <!-- Telif hakkı -->
+                <div class="footer-links"> <!-- Yasal bağlantılar grubu -->
+                    <a href="#">İletişim</a> <!-- İletişim linki -->
+                    <a href="#">Veri koruma</a> <!-- Veri koruma linki -->
+                    <a href="#">Gizlilik Politikası</a> <!-- Gizlilik politikası linki -->
+                    <a href="#">Site politikası</a> <!-- Site politikası linki -->
+                </div>
+            </div>
+        </footer> <!-- Footer etiketi sonu -->
+    </main>
+
+    <script src="script.js"> <!-- JavaScript dosyası ekleniyor: script.js dosyası yüklenir -->
+        document.addEventListener('DOMContentLoaded', function() { // Sayfa yüklendiğinde çalışacak fonksiyon
+    console.log('Transfermarkt replica site loaded!'); // Konsola bilgi mesajı basar
+    
+    // Banner kapatma butonu işlevi
+    const stayButton = document.querySelector('.stay-button'); // Banner kapatma butonunu seçer
+    if (stayButton) {
+        stayButton.addEventListener('click', function() { // Butona tıklanınca
+            const banner = document.querySelector('.language-banner'); // Banner'ı seçer
+            if (banner) {
+                banner.style.display = 'none'; // Banner'ı gizler
+            }
+        });
+    }
+    
+    // Slider navigasyon işlevi
+    const prevButton = document.querySelector('.slider-nav.prev'); // Önceki buton
+    const nextButton = document.querySelector('.slider-nav.next'); // Sonraki buton
+    const profilesWrapper = document.querySelector('.profiles-wrapper'); // Profil kaydırma alanı
+    const dots = document.querySelectorAll('.dot'); // Slider noktaları
+    
+    if (nextButton && profilesWrapper) {
+        nextButton.addEventListener('click', function() { // Sonraki butona tıklanınca
+            profilesWrapper.scrollBy({ left: 220, behavior: 'smooth' }); // Sağa kaydırır
+            if (prevButton) {
+                prevButton.disabled = false; // Önceki butonu aktif yapar
+            }
+            updateActiveDot(); // Aktif noktayı günceller
+        });
+    }
+    
+    if (prevButton && profilesWrapper) {
+        prevButton.addEventListener('click', function() { // Önceki butona tıklanınca
+            profilesWrapper.scrollBy({ left: -220, behavior: 'smooth' }); // Sola kaydırır
+            if (profilesWrapper.scrollLeft <= 220) {
+                prevButton.disabled = true; // Başa gelince butonu pasif yapar
+            }
+            updateActiveDot(); // Aktif noktayı günceller
+        });
+    }
+    
+    // Aktif noktayı güncelleyen fonksiyon
+    function updateActiveDot() {
+        if (!dots.length) return; // Nokta yoksa çık
+        const scrollPosition = profilesWrapper ? profilesWrapper.scrollLeft : 0; // Kaydırma konumu
+        const slideIndex = Math.round(scrollPosition / 220); // Hangi slaytta olduğunu bulur
+        dots.forEach(dot => dot.classList.remove('active')); // Tüm aktifleri kaldır
+        const activeDotIndex = Math.min(Math.max(slideIndex, 0), dots.length - 1); // Sınır kontrolü
+        dots[activeDotIndex].classList.add('active'); // Aktif noktayı ekle
+    }
+    
+    // Noktalara tıklama işlevi
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', function() { // Noktaya tıklanınca
+            if (profilesWrapper) {
+                profilesWrapper.scrollTo({ left: index * 220, behavior: 'smooth' }); // İlgili profile kaydırır
+                updateActiveDot(); // Aktif noktayı günceller
+                if (prevButton) {
+                    prevButton.disabled = index === 0; // İlk profile gelince butonu pasif yapar
+                }
+            }
+        });
+    });
+    
+    // Filtre butonları için örnek işlev
+    const filterButtons = document.querySelectorAll('.filter-button'); // Filtre butonlarını seçer
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() { // Butona tıklanınca
+            // Gerçek uygulamada burada açılır menü açılır
+            console.log('Filtre tıklandı:', button.textContent.trim()); // Konsola filtre adını yazdırır
+        });
+    });
+});
+    </script> <!-- JavaScript sonu: script.js dosyasındaki kodlar burada çalışır -->
+</body> <!-- Sayfa gövdesi sonu: Sayfanın ana içeriği biter -->
+</html> <!-- HTML sonu: Dosya sonu -->
